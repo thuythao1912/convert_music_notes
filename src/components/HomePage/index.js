@@ -106,16 +106,28 @@ const HomePage = () => {
           </Button>
         </Row>
       </div>
-      <div className="">
-        <Card border="primary" style={{ width: "100%" }}>
-          <Card.Body>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-          </Card.Body>
-        </Card>
-      </div>
+      <Row className="">
+        <Col className="text-center">
+          <Card border="primary" style={{ width: "100%" }}>
+            <Card.Body>
+              <Card.Title>Fa</Card.Title>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col>
+          <img
+            src="https://lh3.googleusercontent.com/proxy/iSBgDX7AYg4_mG9uC-oAJDyvuU28K6DQ3t748SZ_VyA1ng3JBdhgDPiMAoFIMA5EWIpJjOClHzXKmBP1WyyMBLfA68rIgVI"
+            width="70%"
+          />
+        </Col>
+        <Col className="text-center">
+          <Card border="primary" style={{ width: "100%" }}>
+            <Card.Body>
+              <Card.Title>Sol</Card.Title>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
     </div>
   );
 };
