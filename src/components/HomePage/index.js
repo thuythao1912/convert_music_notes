@@ -3,7 +3,7 @@ import { Button, Col, Row, Card } from "react-bootstrap";
 
 const HomePage = () => {
   const [status, setStatus] = useState("high");
-  const [numStatus, setNumStatus] = useState(0);
+  const [numStatus, setNumStatus] = useState(1);
   const [currentNote, setCurrentNote] = useState([1, 0]); //1: C -> 7:B - 0:đồ 1: đô 2:đố
   const [convertedNote, setConvertedNote] = useState([1, 0]); //1: C -> 7:B - 0:đồ 1: đô 2:đố
 
@@ -11,12 +11,7 @@ const HomePage = () => {
     setStatus(e.target.value);
   };
   const handleNumStatus = (e) => {
-    if (e.target.value > 8 || e.target.value < 0) {
-      alert("Vui lòng nhập số từ 0 đến 8");
-      setNumStatus(0);
-    } else {
-      setNumStatus(e.target.value);
-    }
+    setNumStatus(e.target.value);
   };
   const handleCurrentNote = (noteName, status) => {
     setCurrentNote([noteName, status]);
@@ -30,19 +25,21 @@ const HomePage = () => {
     let upperStatus = false;
     let lowerStatus = false;
 
-    if (status == "high") {
-      // console.log("currentNote", note);
-      // console.log("status", state);
-      // console.log("numStatus", numStatus);
-      resultNote = note * 1 + numStatus * 1 - 1;
-      if (resultNote >= 8) {
-        resultNote = resultNote - 7;
-        state++;
-        state > 2 ? (resultStatus = state - 1) : (resultStatus = state++);
+    if (numStatus > 1) {
+      if (status == "high") {
+        // console.log("currentNote", note);
+        // console.log("status", state);
+        // console.log("numStatus", numStatus);
+        resultNote = note * 1 + numStatus * 1 - 1;
+        if (resultNote >= 8) {
+          resultNote = resultNote - 7;
+          state++;
+          state > 2 ? (resultStatus = state - 1) : (resultStatus = state++);
+        }
       }
+      // console.log("resultNote", resultNote);
+      // console.log("resultStatus", resultStatus);
     }
-    // console.log("resultNote", resultNote);
-    // console.log("resultStatus", resultStatus);
     setConvertedNote([resultNote, resultStatus]);
   };
   const translateNote = (note) => {
@@ -150,13 +147,19 @@ const HomePage = () => {
           <option value="high">Nâng tông</option>
           <option value="low">Hạ tông</option>
         </select>
-        <input
-          type="number"
-          className="form-control"
-          placeholder="Nhập số tông. VD: Đô -> Mi = 3"
+        <select
+          className="form-select form-select-sm"
           onChange={handleNumStatus}
-          value={numStatus}
-        />
+        >
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+        </select>
       </div>
       <span className="text-muted small">*Nhập số tông. VD: Đô - Mi = 3</span>
       <div className="my-3">
