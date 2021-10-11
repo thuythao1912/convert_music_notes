@@ -361,7 +361,7 @@ const HomePage = () => {
         </Col>
         <Col>
           <img
-            src="https://lh3.googleusercontent.com/proxy/iSBgDX7AYg4_mG9uC-oAJDyvuU28K6DQ3t748SZ_VyA1ng3JBdhgDPiMAoFIMA5EWIpJjOClHzXKmBP1WyyMBLfA68rIgVI"
+            src="https://www.clipartmax.com/png/middle/52-528379_cute-arrow-icon-transparent.png"
             width="50%"
             className="rounded-circle"
           />
