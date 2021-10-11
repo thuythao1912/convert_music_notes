@@ -3,11 +3,16 @@ import { Button, Col, Row, Card } from "react-bootstrap";
 const HomePage = () => {
   return (
     <div className="container">
-      <div className="">
-        <h5 className="text-danger">Nâng tông:</h5>
-        <input type="text" className="form-control form-control-sm" />
-        <h5 className="text-primary">Hạ tông:</h5>
-        <input type="text" className="form-control form-control-sm" />
+      <div className="input-group mb-3">
+        <select className="form-select form-select-sm">
+          <option>Nâng tông</option>
+          <option>Hạ tông</option>
+        </select>
+        <input
+          type="number"
+          className="form-control"
+          aria-label="Text input with dropdown button"
+        />
       </div>
 
       <div className="my-3">
